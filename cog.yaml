@@ -1,0 +1,43 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  gpu: true
+  cuda: "11.3"
+
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "ffmpeg"
+    - "x264"
+    - "libx264-dev"
+
+  python_version: "3.9"
+
+  python_packages:
+    - "torch==1.13.1"
+    - "torchvision==0.14.1"
+    - "xformers==0.0.16"
+    - "pytorch-lightning==1.4.2"
+    - "torchmetrics==0.6.0"
+    - "einops==0.6.1"
+    - "open-clip-torch==2.20.0"
+    - "omegaconf==2.3.0"
+    - "triton==2.1.0"
+    - "opencv-python-headless==4.8.0.76"
+    - "scipy==1.11.2"
+    - "matplotlib==3.8.0"
+    - "lpips==0.1.4"
+    - "gradio==3.44.3"
+    - "chardet==5.2.0"
+    - "transformers==4.33.2"
+    - "facexlib==0.3.0"
+    - "tqdm==4.66.1"
+    - "basicsr==1.4.2"
+
+  # commands run after the environment is setup
+  # run:
+  # - "echo env is ready!"
+  # - "echo another command if needed"
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
